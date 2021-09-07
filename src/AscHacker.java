@@ -6,6 +6,7 @@ public class AscHacker extends Hacker {
 
     @Override
     public void run() {
+        System.out.println("Calling run ..");
         super.run();
     }
 
@@ -17,6 +18,6 @@ public class AscHacker extends Hacker {
             counter++;
         }
         System.out.println(this.getName() + " gættede!!! " + counter);
-        return false;
+        return true;
     }
 }

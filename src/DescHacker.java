@@ -12,7 +12,7 @@ public class DescHacker extends Hacker {
             System.out.println(this.getName() + " trying " + counter);
             counter--;
         }
-        return false;
+        return true;
     }
 
     @Override

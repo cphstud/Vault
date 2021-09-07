@@ -7,7 +7,7 @@ public class Main {
         AscHacker ascHacker = new AscHacker(vault);
         DescHacker descHacker = new DescHacker(vault);
         ascHacker.start();
-        descHacker.start();
+        //descHacker.start();
         System.out.println("Done starting");
     }
 }
