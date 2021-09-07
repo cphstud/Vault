@@ -1,0 +1,32 @@
+@startuml
+abstract class Hacker
+
+class Vault {
+{static} -int MAX_PASSWORD = 9999;
+--
++Vault(int pw)
+--
++int getMax()
++boolean isCorrect(int pw)
+
+}
+
+abstract class Hacker {
+--
++Hacker(Vault vault)
+--
+{abstract} boolean tryToHack(Vault vault)
++void run()
+}
+
+class DescHacker {
+}
+class AscHacker {
+}
+
+Hacker <|-- DescHacker
+Hacker <|-- AscHacker
+Thread <|-- Hacker
+Hacker *-- Vault
+
+@enduml
