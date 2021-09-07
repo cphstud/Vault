@@ -1,7 +1,8 @@
 import java.time.temporal.ValueRange;
 
-public class Hacker extends Thread {
+public abstract class Hacker extends Thread {
     Vault vault;
+    String name;
 
     public Hacker(Vault vault) {
         this.vault = vault;
@@ -10,21 +11,10 @@ public class Hacker extends Thread {
     @Override
     public void run() {
         while(!tryToHack(vault)) {
-            System.out.println("Not done ..");
+            System.out.println(this.getName() + " is Not done ..");
         }
+        System.out.println(this.getName() + " DID IT!" );
     }
 
-
-    public boolean tryToHack(Vault vault)  {
-        int counter=0;
-        boolean retVal = false;
-        while (counter < vault.getMax() && retVal == false) {
-            counter++;
-            retVal = vault.isCorrect(counter);
-            System.out.println("Try " + counter + " gave " + retVal);
-        }
-        System.out.println("HIT");
-
-        return retVal;
-    }
+    public abstract boolean tryToHack(Vault vault);
 }
