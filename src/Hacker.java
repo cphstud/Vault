@@ -4,8 +4,9 @@ public abstract class Hacker extends Thread {
     Vault vault;
     String name;
 
-    public Hacker(Vault vault) {
-        this.vault = vault;
+    public Hacker()
+    {
+
     }
 
     @Override
