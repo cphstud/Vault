@@ -16,7 +16,7 @@ public abstract class Hacker extends Thread {
         while(!tryToHack(vault)) {
             System.out.println(this.getName() + " is Not done ..");
         }
-        System.out.println(this.getName() + " DIDX IT!" );
+        System.out.println(this.getName() + " DID IT!" );
     }
 
     public abstract boolean tryToHack(Vault vault);

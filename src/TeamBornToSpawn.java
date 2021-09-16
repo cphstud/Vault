@@ -10,7 +10,11 @@ public class TeamBornToSpawn extends Hacker
     @Override
     public void run()
     {
-        super.run();
+        System.out.println("called by " + this.getName());
+
+
+        tryToHack(vault);
+
     }
 
     @Override
@@ -21,11 +25,13 @@ public class TeamBornToSpawn extends Hacker
             if(vault.isCorrect(i))
             {
                 System.out.println("Password is: " + i);
+                return true;
             }
             else
             {
+                System.out.println("Attempting Password: " + i);
                 vault.isCorrect(i);
-            }
+            }   
         }
         return false;
     }
@@ -39,5 +45,8 @@ public class TeamBornToSpawn extends Hacker
         Thread t1 = new Thread(tbs);
         t1.start();
         t1.join();
+        System.out.println(t1.getName() + " DID IT!" );
+
+
     }
 }
